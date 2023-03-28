@@ -3,6 +3,7 @@
  *putnbr - prints a number to stdout
  *@n: the number to print
  *@counter: the address of the counter of printed characters
+ *
  *Return: nothing
  */
 
