@@ -1,6 +1,7 @@
 #include "main.h"
 
 /**
+ *
  *_putchar - prtins a single a character
  *@c: the character to be printed
  *Return: returns 1
