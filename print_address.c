@@ -1,31 +1,25 @@
 #include "main.h"
-#include <stdlib.h>
-
-void _puthex(unsigned long int n, void *count, int upper)
-{
-    if (n / 16)
-        _puthex(n / 16, count, upper);
-    _putchar((n % 16) + (n % 16 < 10 ? '0' : 'a' - 10), count);
-}
 
 /**
- * print_address - prints the address of a variable
- * @args: the variable to print
- * @count: pointer to count of characters printed
+ * print_address - prints address of input in hexa format
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct flags that determines
+ * if a flag is passed to _printf
+ * Return: number of char printed
  */
-void print_address(va_list args, format_t format, void *count)
+int print_address(va_list l, flags_t *f)
 {
-    unsigned long int address = (unsigned long int)va_arg(args, void *);
-    char *n = _itoa(address, HEXADECIMAL);
-    format.width -= 2; /* remove 0x length */
+	char *str;
+	unsigned long int p = va_arg(l, unsigned long int);
 
-    CHECK_RIGHT_JUSTIFICATION(n, format, count, justifier)
+	register int count = 0;
 
-    _puts("0x", count);
-    _puthex(address, count, 0);
+	(void)f;
 
-    CHECK_LEFT_JUSTIFICATION(n, format, count, justifier)
-
-    _putchar('\0', count);
-    free(n);
+	if (!p)
+		return (_puts("(nil)"));
+	str = convert(p, 16, 1);
+	count += _puts("0x");
+	count += _puts(str);
+	return (count);
 }
