@@ -2,6 +2,7 @@
 
 /**
  *select_id - executes the right function
+ *
  *@ap: the aprgument pointer of the variadic function
  *@c: the character to check
  *@counter: character counter
