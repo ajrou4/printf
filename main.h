@@ -14,4 +14,5 @@ void	putnbr_binary(unsigned int n, int *counter);
 void	putnbr_hex(unsigned int n, int isupper, int *counter);
 void 	putunbr_octal(unsigned int n, unsigned int base, int *counter);
 
+
 #endif
