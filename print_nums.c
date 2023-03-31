@@ -5,7 +5,7 @@
  * @l: va_list of arguments from _printf
  * @f: pointer to the struct flags determining
  * if a flag is passed to _printf
- * Return: number of char printed
+ * Return: Num of char printed
  */
 int print_int(va_list l, flags_t *f)
 {
@@ -18,7 +18,7 @@ int print_int(va_list l, flags_t *f)
 		res += _putchar('+');
 	if (n <= 0)
 		res++;
-	print_number(n);
+	print_Num(n);
 	return (res);
 }
 
@@ -27,7 +27,7 @@ int print_int(va_list l, flags_t *f)
  * @l: va_list of arguments from _printf
  * @f: pointer to the struct flags determining
  * if a flag is passed to _printf
- * Return: number of char printed
+ * Return: Num of char printed
  */
 int print_unsigned(va_list l, flags_t *f)
 {
@@ -39,11 +39,11 @@ int print_unsigned(va_list l, flags_t *f)
 }
 
 /**
- * print_number - helper function that loops through
+ * print_Num - helper function that loops through
  * an integer and prints all its digits
  * @n: integer to be printed
  */
-void print_number(int n)
+void print_Num(int n)
 {
 	unsigned int n1;
 
@@ -56,15 +56,15 @@ void print_number(int n)
 		n1 = n;
 
 	if (n1 / 10)
-		print_number(n1 / 10);
+		print_Num(n1 / 10);
 	_putchar((n1 % 10) + '0');
 }
 
 /**
- * count_digit - returns the number of digits in an integer
+ * count_digit - returns the Num of digits in an integer
  * for _printf
  * @i: integer to evaluate
- * Return: number of digits
+ * Return: Num of digits
  */
 int count_digit(int i)
 {
